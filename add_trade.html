@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}<section class="panel"><div class="eyebrow">TRADE JOURNAL</div><h1>Record a trade</h1><form method="post" class="gridform">
+<label>Date<input type="date" name="trade_date" value="{{today}}" required></label><label>Symbol / Instrument<input name="symbol" placeholder="e.g. XAUUSD, NIFTY" required></label>
+<label>Direction<select name="direction"><option>Buy</option><option>Sell</option></select></label><label>Setup / Strategy<input name="setup" placeholder="e.g. liquidity sweep, breakout"></label>
+<label>Entry price<input type="number" step="any" name="entry"></label><label>Exit price<input type="number" step="any" name="exit"></label>
+<label>Stop loss<input type="number" step="any" name="stop_loss"></label><label>Target price<input type="number" step="any" name="target"></label>
+<label>Quantity / Lots<input type="number" step="any" name="quantity" value="1"></label><label>Gross P&amp;L<input type="number" step="any" name="pnl" value="0"></label>
+<label>Fees / Commission<input type="number" step="any" name="fees" value="0"></label><label>Exit reason<select name="exit_reason"><option value="">Select</option><option>Target hit</option><option>Stop loss hit</option><option>Manual exit</option><option>Trailing stop</option><option>Time-based exit</option><option>Other</option></select></label>
+<label class="full">Trade notes / What did you learn?<textarea name="notes" rows="4" placeholder="Entry reasoning, emotions, rule-following, mistakes, lessons..."></textarea></label>
+<div class="full"><button class="btn">Save trade</button></div></form></section>{% endblock %}

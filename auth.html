@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}<section class="panel auth"><div class="eyebrow">REAL TRADER ACCOUNT</div><h1>{{mode}}</h1>
+<form method="post">{% if mode=="Register" %}<label>Display name<input name="display_name" required></label>{% endif %}
+<label>Username<input name="username" required autocomplete="username"></label>
+<label>Password<input name="password" type="password" required minlength="8" autocomplete="{% if mode=='Login' %}current-password{% else %}new-password{% endif %}"></label>
+<button class="btn">{{mode}}</button></form><p class="muted">{% if mode=="Login" %}New here? <a href="/register">Create account</a>{% else %}Already registered? <a href="/login">Login</a>{% endif %}</p></section>{% endblock %}

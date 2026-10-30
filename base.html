@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REAL TRADER</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><header><a class="brand" href="/">REAL<span>TRADER</span></a>
+{% if session.get('user_id') %}<nav><a href="/dashboard">Dashboard</a><a href="/trades">Journal</a><a href="/add">＋ Add Trade</a><a href="/reports">Reports</a><a href="/logout">Logout</a></nav>{% endif %}</header>
+<main>{% with messages=get_flashed_messages() %}{% if messages %}<div class="flash">{% for m in messages %}{{m}}{% endfor %}</div>{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+<footer>REAL TRADER · Track decisions. Review performance.</footer></body></html>
